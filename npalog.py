@@ -6,7 +6,7 @@ import os
 import re
 import inquirer
 #-------------------------------------------------------------------------------
-foldernames = os.listdir('/Users/rbichewar/Documents/caselog/')
+foldernames = os.listdir('path')
 print(foldernames)
 
 questions = [
@@ -19,7 +19,7 @@ folder = inquirer.prompt(questions)
 print folder["foldername"]
 
 folder11 = (folder["foldername"])
-folder_pa = '/Users/rbichewar/Documents/caselog'
+folder_pa = '/Users/Documents/caselog'
 folder_path = os.path.join(folder_pa,folder11)
 
 # define the path
@@ -44,7 +44,7 @@ print filename_1["filename"]
 
 questions = [
  inquirer.List("select",  message="Please select term (all gives output for all terms)",
-                choices=['all', 'error','Set clientId', 'gateway.npa.goskope.com','Resolved', 'keepalive','handleDataFromGw','tunneling','timeout','search'],
+                choices=['error','Resolved','timeout','failed'],
             ),
 ]
 answers = inquirer.prompt(questions)
@@ -57,16 +57,13 @@ print answers["select"]
 
 # select error message to filter from data
 if answers["Select"] == all:
-   line_regex = re.compile('error' or 'Set clientId' or 'gateway.npa.goskope.com' or 'Resolved' or 'keepalive' or 'handleDataFromGw' or 'tunneling' or 'timeout')
+   line_regex = re.compile('error' or 'Resolved' or 'timeout' or 'failed')
 #elif answers['select'] == sea:
 #   user_input = raw_input("add data")
 #   line_regex = re.compile(user_input)
 #else:
 #    line_regex = re.compile(answers["select"])
  
-#line_regex = re.compile('Set clientId' or 'gateway.npa.goskope.com' or 'Resolved' or 'timeout' or 'dppool' or 'TCP connect' or 'failed')
-
-
 
 #from datetime import datetime
 #match = re.search(r'\d{4}-\d{2}-\d{2}', filename_1["filename"])
@@ -79,7 +76,7 @@ print(file_path)
 
 # Output file, where the matched loglines will be copied to
 
-output_filename = os.path.normpath("/Users/rbichewar/Documents/npalogresult/npatest.log")
+output_filename = os.path.normpath("/Users/Documents/analysis.log")
 
 # Overwrites the file, ensure we're starting out with a blank file
 
