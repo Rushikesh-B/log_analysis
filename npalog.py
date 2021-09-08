@@ -42,13 +42,13 @@ print filename_1["filename"]
     
 # error list-------------if looking for specific data--------------
 
-#questions = [
-# inquirer.List("select",  message="Please select term (all gives output for all terms)",
-#                choices=['all', 'error','Set clientId', 'gateway.npa.goskope.com','Resolved', 'keepalive','handleDataFromGw','tunneling','timeout','search'],
-#            ),
-#]
-#answers = inquirer.prompt(questions)
-#print answers["select"]
+questions = [
+ inquirer.List("select",  message="Please select term (all gives output for all terms)",
+                choices=['all', 'error','Set clientId', 'gateway.npa.goskope.com','Resolved', 'keepalive','handleDataFromGw','tunneling','timeout','search'],
+            ),
+]
+answers = inquirer.prompt(questions)
+print answers["select"]
 
 
 #date = raw_input ('enter date (ex.2020/07/15 05:42:39) :')
@@ -56,15 +56,15 @@ print filename_1["filename"]
 
 
 # select error message to filter from data
-#if answers["Select"] == all:
-#   line_regex = re.compile('error' or 'Set clientId' or 'gateway.npa.goskope.com' or 'Resolved' or 'keepalive' or 'handleDataFromGw' or 'tunneling' or 'timeout')
+if answers["Select"] == all:
+   line_regex = re.compile('error' or 'Set clientId' or 'gateway.npa.goskope.com' or 'Resolved' or 'keepalive' or 'handleDataFromGw' or 'tunneling' or 'timeout')
 #elif answers['select'] == sea:
 #   user_input = raw_input("add data")
 #   line_regex = re.compile(user_input)
 #else:
 #    line_regex = re.compile(answers["select"])
  
-line_regex = re.compile('Set clientId' or 'gateway.npa.goskope.com' or 'Resolved' or 'timeout' or 'dppool' or 'TCP connect' or 'failed')
+#line_regex = re.compile('Set clientId' or 'gateway.npa.goskope.com' or 'Resolved' or 'timeout' or 'dppool' or 'TCP connect' or 'failed')
 
 
 
