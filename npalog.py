@@ -1,6 +1,6 @@
 # Rushikesh Bichewar
 
-#-------------------NPA / NSclient log analyzer--------------------------#
+#------------------log analyzer--------------------------#
 import pathlib
 import os
 import re
